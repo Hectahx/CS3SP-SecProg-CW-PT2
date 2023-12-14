@@ -1,0 +1,21 @@
+test.php
+labs/
+*/uploads/*
+create_test.php
+.htaccess
+*/.htaccess
+
+### PHPUnit ###
+# Covers PHPUnit
+# Reference: https://phpunit.de/
+
+# Generated files
+.phpunit.result.cache
+.phpunit.cache
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/

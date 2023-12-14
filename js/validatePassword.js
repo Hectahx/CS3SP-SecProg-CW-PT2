@@ -1,7 +1,10 @@
 function validatePassword() {
     var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
     var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
+    if(password != confirmPassword){
+        return [false, "Passwords do not match - Front End"];
+    }
     if (regex.test(password)) {
         //alert("Password is valid");
         return [true, "Password is valid - Front End"];

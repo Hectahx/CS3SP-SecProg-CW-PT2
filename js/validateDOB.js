@@ -15,9 +15,9 @@ function validateDOB() {
         age--;
     }
    
-    if (age < 18) {
+    if (age < 18 || age >=100) {
         //alert("You must be 18 years or older.");
-        return [false, "You must be 18 years or older - Front End"];
+        return [false, "You must be 18 years or older, or you are too old for this application - Front End"];
     } else if (isNaN(age)) {
         return [false, "Invalid Date Format - Front End"];
     }

@@ -27,22 +27,22 @@ Follow the guide provided by [DigitalOcean](https://www.digitalocean.com/communi
 1. Copy your project into the directory you configured in Apache
 
 2. Configure your application to connect to the MySQL database.
-    - Connection to the database is done in **php/connection.php**
+    - Connection to the database is done in [php/connection.php](php/connection.php)
 
 ## Tests
 
 ### Unit Testing
  - Unit Testing has been done using PHPUnit
- - All PHPUnit tests are located in **tests/phpunit**
+ - All PHPUnit tests are located in [tests/phpunit/](tests/phpunit/)
  - Each class has 3 tests which test valid data, invalid data, and empty data
 
 ### Fuzzy Testing
- - Fuzzy Testing is done with a python script made by myself located in **test/fuzzy/fuzzyTest.py**
+ - Fuzzy Testing is done with a python script made by myself located in [test/fuzzy/fuzzyTest.py](test/fuzzy/fuzzyTest.py)
  - Using valid inputs, the script utilizes a program called [Radamsa](https://gitlab.com/akihe/radamsa) (needs to be installed) to create malformed inputs which are then sent to the API which handles the data validation
  - This is repeated 5 times and the data sent to the API & the reponse is printed to console and written to a file named **output-YYYY-MM-DD_HH-MM-SS.txt**
- 
+
  #### Usage
- - Locate to test/fuzzy
+ - Locate to **test/fuzzy**
  - Activate the python virtual environment provided - `source ./fuzzyvenv/bin/activate`
  - Replace the URL on Line 33 with your own URL
  - Run the program - `py fuzzyTest.py`

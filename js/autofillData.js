@@ -47,3 +47,15 @@ function fillData(isValid) {
     document.getElementById("phone").value = data[isValid]["phoneData"]
     document.getElementById("county").value = data[isValid]["countyData"]
 }
+
+$(document).ready(function () {
+    $('#validButton').on('click', function () {
+        fillData("valid")
+    })
+    $('#invalidButton').on('click', function () {
+        fillData("invalid")
+    })
+    $('#resetButton').on('click', function () {
+        fillData("reset")
+    })
+})

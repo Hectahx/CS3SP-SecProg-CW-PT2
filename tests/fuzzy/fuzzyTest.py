@@ -30,7 +30,7 @@ def generate_deformed_input(input_value):
         raise Exception(stderr.decode(errors='ignore'))
 
 async def post_deformed_inputs_async(session, deformedInputs):
-    url = 'http://192.168.124.132/forms/php/processValidation.php'
+    url = 'http://192.168.124.132/php/processValidation.php'
     data = aiohttp.FormData()
 
     for key, value in deformedInputs.items():

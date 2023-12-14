@@ -1,32 +1,38 @@
 <?php
 namespace forms;
+include_once("./php/connection.php");
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:;");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/display_table.css">
     <title>Database Records</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: left;
-        }
-    </style>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
 </head>
 <body>
     <h1>Database Records - Return to form <a href="index.php">here</a></h1>
+    <form action="display_table.php" method="post">
+        <button type="submit">Reset table - DEBUG</button>
+    </form>
+    <br>
 
     <?php
 
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    include_once("./php/connection.php");
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $sql = 'Truncate table form_data';
+        $result = $con->query($sql);
+    }
+
+
+
     // SQL query to select all records from a table
     $sql = "SELECT * FROM form_data";
     $result = $con->query($sql);
@@ -48,7 +54,7 @@ namespace forms;
             // Check if the blob is not empty
             if (!empty($blob)) {
                 // Assuming it's an image
-                return  '<img src="data:image/jpeg;base64,'.base64_encode($blob).'" style="width: 100px; height: auto;" />';
+                return  '<img src="data:image/jpeg;base64,'.base64_encode($blob).'"" />';
             } else {
                 return 'N/A';
             }

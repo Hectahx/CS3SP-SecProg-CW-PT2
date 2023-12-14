@@ -7,7 +7,7 @@ class FileValidatorTest extends TestCase {
 
     protected function setUp(): void {
         // Define the path to the test files directory
-        $this->testFilesPath = __DIR__ . '/testfiles/';
+        $this->testFilesPath = __DIR__ . '/image-files/';
     }
 
     public function testValidPNGFile() {

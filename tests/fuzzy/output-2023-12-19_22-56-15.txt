@@ -1,0 +1,150 @@
+////////////////////////////////////////////////////////////////////////////
+
+Set 3
+Data Sent to Server: 
+{
+          "dobData": "0-01-01",
+          "countyData": "elagggggggggggg",
+          "cardData": "-340282366920938463463374607431768193626",
+          "emailData": "test@exampe.com",
+          "fileData": "bus.png\nbus.png\nbus.pnus.png\nbus.png\nbus.png\nbus.png",
+          "nameData": "John Dou",
+          "phoneData": "+--0",
+          "jsonData": "R\u2008R\udb40\udc23y\u00b7{keey: value}",
+          "passwordData": "Passw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!\nPassw0rd!",
+          "postcodeData": "B1021444444444444444444444444444444444444444444444444444444444743645AG"
+}
+Warning: Non-JSON response received. Content: <br />
+<b>Warning</b>:  Undefined array key "fileData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>27</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "streetNameData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>39</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "houseNumberData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>40</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "areaData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>41</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "cityData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>42</b><br />
+<br />
+<b>Deprecated</b>:  preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in <b>/var/www/sec_prog/php/HouseNumberValidation.php</b> on line <b>20</b><br />
+{"file":[false,"Empty File. We can only accept PNG images - Back End"],"json":[false,"The JSON is invalid - Back End"],"postcode":[false,"Invalid UK postcode - Back End"],"password":[false,"Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one symbol - Back End"],"card":[false,"Card number must be between 13 and 19 digits - Back End"],"name":[true,"Valid Name - Back End"],"email":[true,"Valid Email - Back End"],"dob":[false,"Date of birth must be exactly 10 characters in format DD-MM-YYYY - Back End"],"phone":[false,"Please enter a valid UK phone number with the country code. Format: +447305939569 - Back End"],"county":[false,"Invalid Region - Back End"],"streetName":[false,"Street Name is required - Back End"],"houseNumber":[false,"Invalid House Number - House number cannot start with 0 - Back End"],"area":[false,"Area is required - Back End"],"city":[false,"City is required - Back End"],"allValid":false}
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+Set 5
+Data Sent to Server: 
+{
+          "dobData": "",
+          "countyData": "en\udb40\udc7fgland",
+          "cardData": "4211111111111111\u0e44",
+          "emailData": "testest@example.c\udb40\udc2com",
+          "fileData": "bi\u2068ngus.png",
+          "nameData": "John Doe\nJohn Doe",
+          "phoneData": "0",
+          "jsonData": "{key: v\ufdd0alue}",
+          "passwordData": "6Passw4294967294rd!\n21\u200847483643Passw1844674407370955161\u02b66\udb40\udc2f170\ud835\udfd60rd!",
+          "postcodeData": "B129 76404984773991095620690881AG"
+}
+Warning: Non-JSON response received. Content: <br />
+<b>Warning</b>:  Undefined array key "fileData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>27</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "streetNameData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>39</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "houseNumberData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>40</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "areaData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>41</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "cityData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>42</b><br />
+<br />
+<b>Deprecated</b>:  preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in <b>/var/www/sec_prog/php/HouseNumberValidation.php</b> on line <b>20</b><br />
+{"file":[false,"Empty File. We can only accept PNG images - Back End"],"json":[false,"The JSON is invalid - Back End"],"postcode":[false,"Invalid UK postcode - Back End"],"password":[false,"Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one symbol - Back End"],"card":[false,"Card number must contain only numbers - Back End"],"name":[true,"Valid Name - Back End"],"email":[false,"Invalid Email - Back End"],"dob":[false,"Date of birth must be exactly 10 characters in format DD-MM-YYYY - Back End"],"phone":[false,"Please enter a valid UK phone number with the country code. Format: +447305939569 - Back End"],"county":[false,"Invalid Region - Back End"],"streetName":[false,"Street Name is required - Back End"],"houseNumber":[false,"Invalid House Number - House number cannot start with 0 - Back End"],"area":[false,"Area is required - Back End"],"city":[false,"City is required - Back End"],"allValid":false}
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+Set 1
+Data Sent to Server: 
+{
+          "dobData": "235109982\ud834\udd6089-2-2",
+          "countyData": "e$'$PATH$+$258$&",
+          "cardData": "4111111111111110",
+          "emailData": "test@ex+/v-0ample.com",
+          "fileData": "bingus.png\nbingus.png",
+          "nameData": "(JAhn Do\udb40\udc1d\udb40\udc6fe",
+          "phoneData": "+44730593956\udb40\udc4b9",
+          "jsonData": "{key: \udb40\udc79val\udb40\udc79val\udb40\udc72ue}\udb40\udc62",
+          "passwordData": "Passw0rd!\n!\n\u0000",
+          "postcodeData": "B7 3AG"
+}
+Warning: Non-JSON response received. Content: <br />
+<b>Warning</b>:  Undefined array key "fileData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>27</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "streetNameData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>39</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "houseNumberData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>40</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "areaData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>41</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "cityData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>42</b><br />
+<br />
+<b>Deprecated</b>:  preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in <b>/var/www/sec_prog/php/HouseNumberValidation.php</b> on line <b>20</b><br />
+{"file":[false,"Empty File. We can only accept PNG images - Back End"],"json":[false,"The JSON is invalid - Back End"],"postcode":[true,"Postcode is valid - Back End"],"password":[false,"Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one symbol - Back End"],"card":[false,"Invalid card number - Back End"],"name":[false,"Name can only contain letters and spaces."],"email":[false,"Invalid Email - Back End"],"dob":[false,"Date of birth must be exactly 10 characters in format DD-MM-YYYY - Back End"],"phone":[false,"Please enter a valid UK phone number with the country code. Format: +447305939569 - Back End"],"county":[false,"Invalid Region - Back End"],"streetName":[false,"Street Name is required - Back End"],"houseNumber":[false,"Invalid House Number - House number cannot start with 0 - Back End"],"area":[false,"Area is required - Back End"],"city":[false,"City is required - Back End"],"allValid":false}
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+Set 4
+Data Sent to Server: 
+{
+          "dobData": "1990-\udb40\udc380\udb40\udc591-01",
+          "countyData": "and\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nandand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand\nand",
+          "cardData": "128",
+          "emailData": "testAexample.stAexample.com",
+          "fileData": "bin\u001egus.png",
+          "nameData": "J\udb40\udc7f\u202dohn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\noe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe\nn Doe",
+          "phoneData": "",
+          "jsonData": "{kdy: v\u001f\u2028val val: valu\udb40\udc7ae}",
+          "passwordData": "Passw1\u0fed\u3000rd!",
+          "postcodeData": "B10"
+}
+Warning: Non-JSON response received. Content: <br />
+<b>Warning</b>:  Undefined array key "fileData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>27</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "streetNameData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>39</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "houseNumberData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>40</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "areaData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>41</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "cityData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>42</b><br />
+<br />
+<b>Deprecated</b>:  preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in <b>/var/www/sec_prog/php/HouseNumberValidation.php</b> on line <b>20</b><br />
+{"file":[false,"Empty File. We can only accept PNG images - Back End"],"json":[false,"The JSON is invalid - Back End"],"postcode":[false,"Invalid UK postcode - Back End"],"password":[false,"Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one symbol - Back End"],"card":[false,"Card number must be between 13 and 19 digits - Back End"],"name":[false,"Name must be between 2 and 50 characters."],"email":[false,"Invalid Email - Back End"],"dob":[false,"Date of birth must be exactly 10 characters in format DD-MM-YYYY - Back End"],"phone":[false,"Please enter a valid UK phone number with the country code. Format: +447305939569 - Back End"],"county":[false,"Invalid Region - Back End"],"streetName":[false,"Street Name is required - Back End"],"houseNumber":[false,"Invalid House Number - House number cannot start with 0 - Back End"],"area":[false,"Area is required - Back End"],"city":[false,"City is required - Back End"],"allValid":false}
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+Set 2
+Data Sent to Server: 
+{
+          "dobData": "1990-01-0",
+          "countyData": "englandandandandandandandandandandandandandandandandandannonnnnnnnnnnnnnnnnnnnnnnnndandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandandand",
+          "cardData": "41111111111111111",
+          "emailData": "test@exaaaaaaaaaample.com",
+          "fileData": "bingus.png\udb40\udc62",
+          "nameData": "+/v\udb40\udc58\udb40\udc78/Koh\udb40\udc221844674\udb40\udc4b4073709551626",
+          "phoneData": "+447305939569\n+447305939569",
+          "jsonData": "{k\udb40\udc5dey: v",
+          "passwordData": "Passw34028236692093843374607431768211455rd!",
+          "postcodeData": "B/ 4G"
+}
+Warning: Non-JSON response received. Content: <br />
+<b>Warning</b>:  Undefined array key "fileData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>27</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "streetNameData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>39</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "houseNumberData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>40</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "areaData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>41</b><br />
+<br />
+<b>Warning</b>:  Undefined array key "cityData" in <b>/var/www/sec_prog/php/processValidation.php</b> on line <b>42</b><br />
+<br />
+<b>Deprecated</b>:  preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in <b>/var/www/sec_prog/php/HouseNumberValidation.php</b> on line <b>20</b><br />
+{"file":[false,"Empty File. We can only accept PNG images - Back End"],"json":[false,"The JSON is invalid - Back End"],"postcode":[false,"Invalid UK postcode - Back End"],"password":[true,"Password is valid - Back End"],"card":[false,"Invalid card number - Back End"],"name":[false,"Name can only contain letters and spaces."],"email":[true,"Valid Email - Back End"],"dob":[false,"Date of birth must be exactly 10 characters in format DD-MM-YYYY - Back End"],"phone":[false,"Please enter a valid UK phone number with the country code. Format: +447305939569 - Back End"],"county":[false,"Invalid Region - Back End"],"streetName":[false,"Street Name is required - Back End"],"houseNumber":[false,"Invalid House Number - House number cannot start with 0 - Back End"],"area":[false,"Area is required - Back End"],"city":[false,"City is required - Back End"],"allValid":false}
+////////////////////////////////////////////////////////////////////////////

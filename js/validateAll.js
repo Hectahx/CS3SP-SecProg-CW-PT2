@@ -16,6 +16,11 @@ function validateAll() {
     var phoneInput = validatePhone();
     var countyInput = validateCounty();
 
+    var streetNameInput = validateStreetName();
+    var houseNumberInput = validateHouseNumber();
+    var areaInput = validateArea();
+    var cityInput = validateCity();
+
     const fileLabel = document.getElementById("fileLabel");
     fileLabel.classList.remove("hidden");
     fileLabel.style.color = isValid(fileInput[0]);
@@ -80,6 +85,31 @@ function validateAll() {
     countyLabel.style.color = isValid(countyInput[0]);
     countyLabel.innerHTML = countyInput[1];
     allValid+=Number(countyInput[0])
+
+
+    const streetNameLabel = document.getElementById("streetNameLabel");
+    streetNameLabel.classList.remove("hidden");
+    streetNameLabel.style.color = isValid(streetNameInput[0]);
+    streetNameLabel.innerHTML = streetNameInput[1];
+    allValid+=Number(streetNameInput[0])
+
+    const houseNumberLabel = document.getElementById("houseNumberLabel");
+    houseNumberLabel.classList.remove("hidden");
+    houseNumberLabel.style.color = isValid(houseNumberInput[0]);
+    houseNumberLabel.innerHTML = houseNumberInput[1];
+    allValid+=Number(houseNumberInput[0])
+
+    const areaLabel = document.getElementById("areaLabel");
+    areaLabel.classList.remove("hidden");
+    areaLabel.style.color = isValid(areaInput[0]);
+    areaLabel.innerHTML = areaInput[1];
+    allValid+=Number(areaInput[0])
+
+    const cityLabel = document.getElementById("cityLabel");
+    cityLabel.classList.remove("hidden");
+    cityLabel.style.color = isValid(cityInput[0]);
+    cityLabel.innerHTML = cityInput[1];
+    allValid+=Number(cityInput[0])
 
     return allValid
 

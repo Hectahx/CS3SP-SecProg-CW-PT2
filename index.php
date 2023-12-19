@@ -17,9 +17,19 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <button id="invalidButton">Autofill Inputs - Invalid</button>
     <button id="resetButton">Reset Inputs</button>
     <br><br><br>
-    <!-- Name Input -->
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" autocomplete="name" placeholder="John Doe">
+    <!-- First Name Input -->
+    <label for="name">First Name:</label>
+    <input type="text" id="name" autocomplete="given-name" placeholder="John">
+    <label for="name" class="example-format">Example: John Doe</label>
+    <br>
+    <label for="name" id="nameLabel" class="hidden"></label>
+    <br>
+    <label for="name" id="nameLabelBackend" class="hidden"></label>
+    <br><br>
+
+    <!-- Last Name Input -->
+    <label for="name">Last Name:</label>
+    <input type="text" id="name" autocomplete="family-name" placeholder="Doe">
     <label for="name" class="example-format">Example: John Doe</label>
     <br>
     <label for="name" id="nameLabel" class="hidden"></label>
@@ -75,7 +85,8 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <!-- Password Input -->
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
-    <label for="password" class="example-format">Password must be at least 8 characters long, contain at least one uppercase letter,
+    <label for="password" class="example-format">Password must be at least 8 characters long, contain at least one
+        uppercase letter,
         one lowercase letter, one number, and one symbol</label>
     <br>
     <label for="password" id="passwordLabel" class="hidden"></label>
@@ -86,6 +97,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <!-- Confirm Password Input -->
     <label for="confirmPassword">Confirm Password:</label>
     <input type="password" id="confirmPassword" required>
+    <label for="confirmPassword" class="example-format">Password must match!</label>
     <br>
     <label for="confirmPassword" id="confirmPasswordLabel" class="hidden"></label>
     <br><br>
@@ -94,7 +106,8 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <!-- Debit Card Input -->
     <label for="debitCard">Debit Card:</label>
     <input type="text" id="debitCard" name="debitCard" required placeholder="378282246310005">
-    <label for="password" class="example-format">Example: 378282246310005 - please try a valid debit card as this uses an algorithm to
+    <label for="password" class="example-format">Example: 378282246310005 - please try a valid debit card as this uses
+        an algorithm to
         prove whether a debit card is valid</label>
     <br>
     <label for="debitCard" id="debitCardLabel" class="hidden"></label>
@@ -120,7 +133,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <br>
     <label for="fileUpload" id="fileLabelBackend" class="hidden"></label>
     <br><br>
-
+ 
     <!-- Post Code Input -->
     <label for="postCode">Post Code:</label>
     <input type="text" id="postCode" name="postCode" placeholder="B4 7ET" required>
@@ -131,6 +144,43 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <label for="postCode" id="postCodeLabelBackend" class="hidden"></label>
     <br><br>
 
+    <!--  Full Address Input -->
+
+    <label for="streetName">Street Name:</label>
+    <input type="text" id="streetName" name="streetName" placeholder="Stratford Road" required>
+    <label for="streetName" class="example-format">Example: Stratford Road </label>
+    <br>
+    <label for="streetName" id="streetNameLabel" class="hidden"></label>
+    <br>
+    <label for="streetName" id="streetNameLabelBackend" class="hidden"></label>
+    <br><br>
+
+    <label for="houseNumber">House Nmmber:</label>
+    <input type="text" id="houseNumber" name="houseNumber" placeholder="50" required>
+    <label for="houseNumber" class="example-format">Example: 50 </label>
+    <br>
+    <label for="houseNumber" id="houseNumberLabel" class="hidden"></label>
+    <br>
+    <label for="houseNumber" id="houseNumberLabelBackend" class="hidden"></label>
+    <br><br>
+
+    <label for="area">Area:</label>
+    <input type="text" id="area" name="area" placeholder="Aston" required>
+    <label for="area" class="example-format">Example: Aston </label>
+    <br>
+    <label for="area" id="areaLabel" class="hidden"></label>
+    <br>
+    <label for="area" id="areaLabelBackend" class="hidden"></label>
+    <br><br>
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" placeholder="Birmingham" required>
+    <label for="city" class="example-format">Example: Birmingham </label>
+    <br>
+    <label for="city" id="cityLabel" class="hidden"></label>
+    <br>
+    <label for="city" id="cityLabelBackend" class="hidden"></label>
+    <br><br>
 
     <br>
 
@@ -149,6 +199,12 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
 <script src="js/validateDOB.js"></script>
 <script src="js/validateEmail.js"></script>
 <script src="js/validatePhone.js"></script>
+
+<script src="js/validateArea.js"></script>
+<script src="js/validateCity.js"></script>
+<script src="js/validateHouseNumber.js"></script>
+<script src="js/validateStreetName.js"></script>
+
 <script src="js/validateAll.js"></script>
 <script src="js/sendData.js"></script>
 

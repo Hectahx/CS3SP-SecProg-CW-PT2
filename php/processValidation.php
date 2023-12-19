@@ -1,11 +1,11 @@
 <?php
 namespace forms;
 
-/*
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-*/
+
 
 
 try {
@@ -36,6 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phoneData = $_POST["phoneData"];
     $countyData = $_POST["countyData"];
 
+    $streetNameData = $_POST["streetNameData"];
+    $houseNumberData = $_POST["houseNumberData"];
+    $areaData = $_POST["areaData"];
+    $cityData = $_POST["cityData"];
+
+
     //Assigning all the variables into their respective validator classes
     try {
         $fileValidator = new FileValidator($fileData);
@@ -49,6 +55,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $ageValidator = new AgeValidator($dobData);
         $phoneValidator = new PhoneValidator($phoneData);
         $countyValidator = new CountyValidator($countyData);
+
+        $streetNameValidator = new StreetNameValidator($streetNameData);
+        $houseNumberValidator = new HouseNumberValidator($houseNumberData);
+        $areaValidator = new AreaValidator($areaData);
+        $cityValidator = new CityValidator($cityData);
+
     } catch (\Exception $e) {
         echo $e;
     }
@@ -68,6 +80,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $validatedData["phone"] = $phoneValidator->validatePhone();
         $validatedData["county"] = $countyValidator->validateCounty();
 
+        $validatedData["streetName"] = $streetNameValidator->validateStreetName();
+        $validatedData["houseNumber"] =  $houseNumberValidator->validateHouseNumber();
+        $validatedData["area"] = $areaValidator->validateArea();
+        $validatedData["city"] = $cityValidator->validateCity();
+
+
+
         $count = 0;
 
         foreach ($validatedData as $key => $value) {
@@ -79,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Error during validation: " . $e->getMessage();
     }
 
-    if ($count == 10) {
+    if ($count == 14) {
         $validatedData["allValid"] = true;
 
         $fileData = $fileValidator->getCleanedFile();//Retrieving a cleaned version of the file
@@ -93,15 +112,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $phoneData = htmlspecialchars($phoneData);
         $countyData = htmlspecialchars($countyData);
 
+        $streetNameData = htmlspecialchars($streetNameData);
+        $houseNumberData = htmlspecialchars($houseNumberData);
+        $areaData = htmlspecialchars($areaData);
+        $cityData = htmlspecialchars($cityData);
+
+
         try {
 
-            $query = $con->prepare("INSERT INTO form_data (name, email, password, postcode, county, number, card, json, file, dob) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $query = $con->prepare("INSERT INTO form_data (name, email, password, postcode, county, number, card, json, file, dob, streetname, housenumber, area, city) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             // Bind the parameters
             $query->bind_param(
-                "ssssssssbs", // Data types of the parameters: s = string, b = blob
+                "ssssssssbsssss", // Data types of the parameters: s = string, b = blob
                 $nameData, $emailData, $passwordData, $postcodeData, $countyData,
-                $phoneData, $cardData, $jsonData, $fileData, $dobData
+                $phoneData, $cardData, $jsonData, $fileData, $dobData ,$streetNameData ,$houseNumberData , $areaData, $cityData
             );
 
             // Assuming $fileData is a blob, you might need to send it in packets

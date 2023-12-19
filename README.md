@@ -41,7 +41,7 @@ Follow the guide provided by [DigitalOcean](https://www.digitalocean.com/communi
  - Using valid inputs, the script utilizes a program called [Radamsa](https://gitlab.com/akihe/radamsa) (needs to be installed) to create malformed inputs which are then sent to the API which handles the data validation
  - This is repeated 5 times and the data sent to the API & the reponse is printed to console and written to a file named **output-YYYY-MM-DD_HH-MM-SS.txt**
 
- #### Usage
+#### Usage
  - Locate to **test/fuzzy**
  - Activate the python virtual environment provided - `source ./fuzzyvenv/bin/activate`
  - Replace the URL on Line 33 with your own URL

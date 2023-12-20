@@ -122,31 +122,31 @@ $(document).ready(function () {
                     countyLabel.classList.remove("hidden");
                     countyLabel.style.color = isValid(validatedData.county[0]);
                     countyLabel.innerHTML = validatedData.county[1];
+
+                    const streetNameLabel = document.getElementById("streetNameLabelBackend");
+                    streetNameLabel.classList.remove("hidden");
+                    streetNameLabel.style.color = isValid(validatedData.streetName[0]);
+                    streetNameLabel.innerHTML = validatedData.streetName[1];
+    
+                    const houseNumberlabel = document.getElementById("houseNumberLabelBackend");
+                    houseNumberlabel.classList.remove("hidden");
+                    houseNumberlabel.style.color = isValid(validatedData.houseNumber[0]);
+                    houseNumberlabel.innerHTML = validatedData.houseNumber[1];
+    
+                    const arealabel = document.getElementById("areaLabelBackend");
+                    arealabel.classList.remove("hidden");
+                    arealabel.style.color = isValid(validatedData.area[0]);
+                    arealabel.innerHTML = validatedData.area[1];
+    
+                    const citylabel = document.getElementById("cityLabelBackend");
+                    citylabel.classList.remove("hidden");
+                    citylabel.style.color = isValid(validatedData.city[0]);
+                    citylabel.innerHTML = validatedData.city[1];
                 }
                 catch(err){
                     alert("There has been a server-side error. See console for more information");
                     console.log(err);
                 }
-
-                const streetNameLabel = document.getElementById("streetNameLabelBackend");
-                streetNameLabel.classList.remove("hidden");
-                streetNameLabel.style.color = isValid(validatedData.streetName[0]);
-                streetNameLabel.innerHTML = validatedData.streetName[1];
-
-                const houseNumberlabel = document.getElementById("houseNumberLabelBackend");
-                houseNumberlabel.classList.remove("hidden");
-                houseNumberlabel.style.color = isValid(validatedData.houseNumber[0]);
-                houseNumberlabel.innerHTML = validatedData.houseNumber[1];
-
-                const arealabel = document.getElementById("areaLabelBackend");
-                arealabel.classList.remove("hidden");
-                arealabel.style.color = isValid(validatedData.area[0]);
-                arealabel.innerHTML = validatedData.area[1];
-
-                const citylabel = document.getElementById("cityLabelBackend");
-                citylabel.classList.remove("hidden");
-                citylabel.style.color = isValid(validatedData.city[0]);
-                citylabel.innerHTML = validatedData.city[1];
 
 
                 $('#submit').prop('disabled', true);

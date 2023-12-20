@@ -1,6 +1,6 @@
 <?php
 $dbhost = "localhost";
-$dbuser = "roodt";
+$dbuser = "root";
 $dbpass = "root";
 $dbname = "forms";
 try {

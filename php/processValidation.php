@@ -1,11 +1,11 @@
 <?php
 namespace forms;
 
-
+/*
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+*/
 
 
 try {
@@ -131,17 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
         try {
-
-            $query = $con->prepare("INSERT INTO form_data (name, lastname, email, password, biography, postcode, county, number, card, json, file, dob) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-            // Bind the parameters
-            $query->bind_param(
-                "ssssssssssssbs", // Data types of the parameters: s = string, b = blob
-                $nameData, $lastNameData, $emailData, $passwordData, $biographyData, $postcodeData, $countyData,
-                $phoneData, $cardData, $jsonData, $fileData, $dobData
-            );
-
-            $query = $con->prepare("INSERT INTO form_data (name, email, password, postcode, county, number, card, json, file, dob, streetname, housenumber, area, city) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $query = $con->prepare("INSERT INTO form_data (name, lastname, email, password, biography, postcode, county, number, card, json, file, dob, streetname, housenumber, area, city) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             // Bind the parameters
             $query->bind_param(

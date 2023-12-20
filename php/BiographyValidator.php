@@ -21,23 +21,27 @@ class BiographyValidator {
     }
 
     function validateBiography() {
+
+        if ($this->biography === "") {
+            return [false, "Empty Biography - Back End"];
+        }
         // Split the biography into sentences. A simplistic approach is used here,
         // considering a sentence ending in a period, exclamation mark, or question mark.
         $sentences = preg_split('/[.!?]\s+/', $this->biography, -1, PREG_SPLIT_NO_EMPTY);
     
         // Check if there are exactly 3 sentences
-        if (count($sentences) !== 3) {
-            return [false, "The biography should contain exactly 3 sentences."];
+        if (count($sentences) < 3) {
+            return [false, "The biography should contain at least 3 sentences - Back End"];
         }
     
         // Check if each sentence is at least 10 characters long
         foreach ($sentences as $sentence) {
             if (strlen(trim($sentence)) < 10) {
-                return [false, "Each sentence should be at least 10 characters long."];
+                return [false, "Each sentence should be at least 10 characters long - Back End"];
             }
         }
     
-        return [true, "The biography is valid."];
+        return [true, "Valid Biography - Back End"];
     }
 }
 ?>

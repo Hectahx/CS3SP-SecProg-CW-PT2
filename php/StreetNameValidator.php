@@ -18,7 +18,7 @@ class StreetNameValidator {
 
     public function validateStreetName() {
         if ($this->streetName === "") {
-            return [false, "Street Name is required - Back End"];
+            return [false, "Empty Street Name - Back End"];
         }
         if (!preg_match('/^[a-zA-Z]+$/', $this->streetName)) {
             return [false, "Street Name must contain only letters - Back End"];
@@ -26,7 +26,7 @@ class StreetNameValidator {
         if (strlen($this->streetName) > 150) {
             return [false, "Street Name must be 150 characters or less - Back End"];
         }
-        return [true, "Street Name is Valid - Back End"];
+        return [true, "Valid Street Name - Back End"];
     }
 }
 ?>

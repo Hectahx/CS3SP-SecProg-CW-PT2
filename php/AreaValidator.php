@@ -22,7 +22,7 @@ class AreaValidator {
 
     public function validateArea() {
         if ($this->area === "") {
-            return [false, "Area is required - Back End"];
+            return [false, "Empty Area - Back End"];
         }
         if (strlen($this->area) > 50) {
             return [false, "Area name must be 50 characters or less - Back End"];
@@ -30,7 +30,7 @@ class AreaValidator {
         if (!preg_match('/^[A-Z]/', $this->area)) {
             return [false, "Area must start with a capital letter - Back End"];
         }
-        return [true, "Area is Valid - Back End"];
+        return [true, "Valid Area - Back End"];
     }
 }
 ?>

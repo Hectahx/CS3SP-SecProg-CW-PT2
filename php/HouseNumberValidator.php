@@ -17,8 +17,11 @@ class HouseNumberValidator {
     }
 
     public function validateHouseNumber() {
+        if ($this->houseNumber == "") {
+            return [false, "Empty House Number - Back End"];
+        }
         if (!preg_match('/^[1-9]\d*$/', $this->houseNumber)) {
-            return [false, "Invalid House Number - House number cannot start with 0 - Back End"];
+            return [false, "House number cannot start with 0 - Back End"];
         }
         $num = intval($this->houseNumber);
         if ($num < 1 || $num > 10000) {
@@ -27,7 +30,7 @@ class HouseNumberValidator {
         if (strlen($this->houseNumber) > 5) {
             return [false, "House Number must not exceed 5 digits - Back End"];
         }
-        return [true, "House Number is Valid - Back End"];
+        return [true, "Valid House Number - Back End"];
     }
 }
 ?>

@@ -18,7 +18,7 @@ class CityValidator {
 
     public function validateCity() {
         if ($this->city === "") {
-            return [false, "City is required - Back End"];
+            return [false, "Empty City - Back End"];
         }
         if (strlen($this->city) > 50) {
             return [false, "City name must be 50 characters or less - Back End"];
@@ -26,7 +26,7 @@ class CityValidator {
         if (!preg_match('/^[A-Z]/', $this->city)) {
             return [false, "City must start with a capital letter - Back End"];
         }
-        return [true, "City is Valid - Back End"];
+        return [true, "Valid City - Back End"];
     }
 }
 ?>

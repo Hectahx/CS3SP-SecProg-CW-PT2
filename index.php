@@ -164,7 +164,6 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <label for="postCode" id="postCodeLabelBackend" class="hidden"></label>
     <br><br>
 
-<<<<<<< HEAD
     <!-- Biography Input -->
     <label for="biography">Biography:</label>
     <textarea id="biography" name="biography" placeholder="Talk about yourself" required></textarea>
@@ -175,7 +174,6 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <label for="biography" id="biographyLabelBackend" class="hidden"></label>
     <br><br>
 
-=======
     <!--  Full Address Input -->
 
     <label for="streetName">Street Name:</label>
@@ -213,7 +211,6 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <br>
     <label for="city" id="cityLabelBackend" class="hidden"></label>
     <br><br>
->>>>>>> 0b9e113f8000da905f26a9a72f55267b22b9ebe7
 
     <br>
 

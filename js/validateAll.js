@@ -94,13 +94,11 @@ function validateAll() {
     countyLabel.innerHTML = countyInput[1];
     allValid+=Number(countyInput[0])
 
-<<<<<<< HEAD
     const biographyLabel = document.getElementById("biographyLabel");
     biographyLabel.classList.remove("hidden");
     biographyLabel.style.color = isValid(biographyInput[0]);
     biographyLabel.innerHTML = biographyInput[1];
     allValid+=Number(biographyInput[0])
-=======
 
     const streetNameLabel = document.getElementById("streetNameLabel");
     streetNameLabel.classList.remove("hidden");
@@ -125,7 +123,6 @@ function validateAll() {
     cityLabel.style.color = isValid(cityInput[0]);
     cityLabel.innerHTML = cityInput[1];
     allValid+=Number(cityInput[0])
->>>>>>> 0b9e113f8000da905f26a9a72f55267b22b9ebe7
 
     return allValid
 

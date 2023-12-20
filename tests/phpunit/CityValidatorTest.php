@@ -10,7 +10,7 @@ class CityValidatorTest extends TestCase {
 
     public function testInvalidCity() {
         $validator = new CityValidator('invalid-City');
-        $this->assertEquals([false, "City must start with a capital letter - Back End"], $validator->validateCity());
+        $this->assertEquals([false, "City must start with a capital letter and contain only letters - Back End"], $validator->validateCity());
     }
     public function testInvalidLengthCity() {
         $validator = new CityValidator('CityaCityaCityaCityaCityaCityaCityaCityaCityaCityaCityaCitya');

@@ -13,11 +13,7 @@ class AreaValidator {
     }
 
     public function setArea($area) {
-        if(empty($area)){
-            $this->area = "";
-        } else {
-            $this->area = trim($area);
-        }
+        $this->area = empty($area) ? "" : trim($area);
     }
 
     public function validateArea() {
@@ -27,8 +23,11 @@ class AreaValidator {
         if (strlen($this->area) > 50) {
             return [false, "Area name must be 50 characters or less - Back End"];
         }
-        if (!preg_match('/^[A-Z]/', $this->area)) {
-            return [false, "Area must start with a capital letter - Back End"];
+        if (!preg_match('/^[A-Z][a-zA-Z\s]+$/', $this->area)) {
+            return [false, "Area must start with a capital letter, contain only letters and spaces - Back End"];
+        }
+        if (preg_match('/([a-zA-Z])\\1{2,}/', $this->area)) {
+            return [false, "Area name has too many repetitive characters - Back End"];
         }
         return [true, "Valid Area - Back End"];
     }

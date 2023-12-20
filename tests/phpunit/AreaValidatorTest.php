@@ -10,7 +10,7 @@ class AreaValidatorTest extends TestCase {
 
     public function testInvalidArea() {
         $validator = new AreaValidator('invalid-area');
-        $this->assertEquals([false, "Area must start with a capital letter - Back End"], $validator->validateArea());
+        $this->assertEquals([false, "Area must start with a capital letter, contain only letters and spaces - Back End"], $validator->validateArea());
     }
     public function testInvalidLengthArea() {
         $validator = new AreaValidator('AreaaAreaaAreaaAreaaAreaaAreaaAreaaAreaaAreaaAreaaAreaaAreaa');

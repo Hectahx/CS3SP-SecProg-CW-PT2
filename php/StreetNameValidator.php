@@ -26,6 +26,12 @@ class StreetNameValidator {
         if (strlen($this->streetName) > 150) {
             return [false, "Street Name must be 150 characters or less - Back End"];
         }
+        if (!preg_match('/^[A-Z][a-zA-Z\s]+$/', $this->streetName)) {
+            return [false, "Street Name must start with a capital letter, contain only letters and spaces - Back End"];
+        }
+        if (preg_match('/([a-zA-Z])\\1{2,}/', $this->streetName)) {
+            return [false, "Street Name has too many repetitive characters - Back End"];
+        }
         return [true, "Valid Street Name - Back End"];
     }
 }

@@ -20,21 +20,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <!-- First Name Input -->
     <label for="name">First Name:</label>
     <input type="text" id="name" autocomplete="given-name" placeholder="John">
-<<<<<<< HEAD
     <label for="name" class="example-format">Example: John - between 2-50 characters</label>
-=======
-    <label for="name" class="example-format">Example: John Doe</label>
-    <br>
-    <label for="name" id="nameLabel" class="hidden"></label>
-    <br>
-    <label for="name" id="nameLabelBackend" class="hidden"></label>
-    <br><br>
-
-    <!-- Last Name Input -->
-    <label for="name">Last Name:</label>
-    <input type="text" id="name" autocomplete="family-name" placeholder="Doe">
-    <label for="name" class="example-format">Example: John Doe</label>
->>>>>>> 0b9e113f8000da905f26a9a72f55267b22b9ebe7
     <br>
     <label for="name" id="nameLabel" class="hidden"></label>
     <br>
@@ -111,13 +97,9 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <!-- Confirm Password Input -->
     <label for="confirmPassword">Confirm Password:</label>
     <input type="password" id="confirmPassword" required>
-<<<<<<< HEAD
-    <label for="password" class="example-format">Password must be at least 8 characters long, contain at least one
+    <label for="confirmPassword" class="example-format">Password must be at least 8 characters long, contain at least one
         uppercase letter,
         one lowercase letter, one number, and one symbol</label>
-=======
-    <label for="confirmPassword" class="example-format">Password must match!</label>
->>>>>>> 0b9e113f8000da905f26a9a72f55267b22b9ebe7
     <br>
     <label for="confirmPassword" id="confirmPasswordLabel" class="hidden"></label>
     <br><br>
@@ -229,16 +211,13 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
 <script src="js/validateDOB.js"></script>
 <script src="js/validateEmail.js"></script>
 <script src="js/validatePhone.js"></script>
-<<<<<<< HEAD
 <script src="js/validateBiography.js"></script>
-=======
 
 <script src="js/validateArea.js"></script>
 <script src="js/validateCity.js"></script>
 <script src="js/validateHouseNumber.js"></script>
 <script src="js/validateStreetName.js"></script>
 
->>>>>>> 0b9e113f8000da905f26a9a72f55267b22b9ebe7
 <script src="js/validateAll.js"></script>
 <script src="js/sendData.js"></script>
 

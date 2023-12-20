@@ -20,7 +20,21 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <!-- First Name Input -->
     <label for="name">First Name:</label>
     <input type="text" id="name" autocomplete="given-name" placeholder="John">
+<<<<<<< HEAD
     <label for="name" class="example-format">Example: John - between 2-50 characters</label>
+=======
+    <label for="name" class="example-format">Example: John Doe</label>
+    <br>
+    <label for="name" id="nameLabel" class="hidden"></label>
+    <br>
+    <label for="name" id="nameLabelBackend" class="hidden"></label>
+    <br><br>
+
+    <!-- Last Name Input -->
+    <label for="name">Last Name:</label>
+    <input type="text" id="name" autocomplete="family-name" placeholder="Doe">
+    <label for="name" class="example-format">Example: John Doe</label>
+>>>>>>> 0b9e113f8000da905f26a9a72f55267b22b9ebe7
     <br>
     <label for="name" id="nameLabel" class="hidden"></label>
     <br>
@@ -97,9 +111,13 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <!-- Confirm Password Input -->
     <label for="confirmPassword">Confirm Password:</label>
     <input type="password" id="confirmPassword" required>
+<<<<<<< HEAD
     <label for="password" class="example-format">Password must be at least 8 characters long, contain at least one
         uppercase letter,
         one lowercase letter, one number, and one symbol</label>
+=======
+    <label for="confirmPassword" class="example-format">Password must match!</label>
+>>>>>>> 0b9e113f8000da905f26a9a72f55267b22b9ebe7
     <br>
     <label for="confirmPassword" id="confirmPasswordLabel" class="hidden"></label>
     <br><br>
@@ -135,7 +153,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <br>
     <label for="fileUpload" id="fileLabelBackend" class="hidden"></label>
     <br><br>
-
+ 
     <!-- Post Code Input -->
     <label for="postCode">Post Code:</label>
     <input type="text" id="postCode" name="postCode" placeholder="B4 7ET" required>
@@ -146,6 +164,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <label for="postCode" id="postCodeLabelBackend" class="hidden"></label>
     <br><br>
 
+<<<<<<< HEAD
     <!-- Biography Input -->
     <label for="biography">Biography:</label>
     <textarea id="biography" name="biography" placeholder="Talk about yourself" required></textarea>
@@ -156,6 +175,45 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <label for="biography" id="biographyLabelBackend" class="hidden"></label>
     <br><br>
 
+=======
+    <!--  Full Address Input -->
+
+    <label for="streetName">Street Name:</label>
+    <input type="text" id="streetName" name="streetName" placeholder="Stratford Road" required>
+    <label for="streetName" class="example-format">Example: Stratford Road </label>
+    <br>
+    <label for="streetName" id="streetNameLabel" class="hidden"></label>
+    <br>
+    <label for="streetName" id="streetNameLabelBackend" class="hidden"></label>
+    <br><br>
+
+    <label for="houseNumber">House Nmmber:</label>
+    <input type="text" id="houseNumber" name="houseNumber" placeholder="50" required>
+    <label for="houseNumber" class="example-format">Example: 50 </label>
+    <br>
+    <label for="houseNumber" id="houseNumberLabel" class="hidden"></label>
+    <br>
+    <label for="houseNumber" id="houseNumberLabelBackend" class="hidden"></label>
+    <br><br>
+
+    <label for="area">Area:</label>
+    <input type="text" id="area" name="area" placeholder="Aston" required>
+    <label for="area" class="example-format">Example: Aston </label>
+    <br>
+    <label for="area" id="areaLabel" class="hidden"></label>
+    <br>
+    <label for="area" id="areaLabelBackend" class="hidden"></label>
+    <br><br>
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" placeholder="Birmingham" required>
+    <label for="city" class="example-format">Example: Birmingham </label>
+    <br>
+    <label for="city" id="cityLabel" class="hidden"></label>
+    <br>
+    <label for="city" id="cityLabelBackend" class="hidden"></label>
+    <br><br>
+>>>>>>> 0b9e113f8000da905f26a9a72f55267b22b9ebe7
 
     <br>
 
@@ -174,7 +232,16 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
 <script src="js/validateDOB.js"></script>
 <script src="js/validateEmail.js"></script>
 <script src="js/validatePhone.js"></script>
+<<<<<<< HEAD
 <script src="js/validateBiography.js"></script>
+=======
+
+<script src="js/validateArea.js"></script>
+<script src="js/validateCity.js"></script>
+<script src="js/validateHouseNumber.js"></script>
+<script src="js/validateStreetName.js"></script>
+
+>>>>>>> 0b9e113f8000da905f26a9a72f55267b22b9ebe7
 <script src="js/validateAll.js"></script>
 <script src="js/sendData.js"></script>
 

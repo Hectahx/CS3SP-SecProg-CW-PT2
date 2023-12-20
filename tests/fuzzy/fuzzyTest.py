@@ -17,6 +17,11 @@ validInputs = {
     "jsonData": '{"key": "value"}',
     "passwordData": "Passw0rd!",
     "postcodeData": "B10 3AG",
+    "streetNameData": "Leominster Road",
+    "houseNumberData": "70",
+    "areaData": "Smallheath ",
+    "cityData": "Birmingham",
+
 }
 
 def generate_deformed_input(input_value):
@@ -30,7 +35,7 @@ def generate_deformed_input(input_value):
         raise Exception(stderr.decode(errors='ignore'))
 
 async def post_deformed_inputs_async(session, deformedInputs):
-    url = 'http://192.168.124.132/php/processValidation.php'
+    url = 'http://127.0.0.1/php/processValidation.php'
     data = aiohttp.FormData()
 
     for key, value in deformedInputs.items():
@@ -53,11 +58,15 @@ async def send_deformed_input_set(session, set_number, file):
     response_text = await post_deformed_inputs_async(session, deformedInputs)
     try:
         response_json = json.loads(response_text)
+        formatted_response = json.dumps(response_json)  
+        formatted_response = formatted_response.replace("],", "],\n")  
+        formatted_response = "     " + formatted_response.replace("\n", "\n    ")  
+
         output = (
             "////////////////////////////////////////////////////////////////////////////\n"
             f"\nSet {set_number}: \n"
-            f"Data Sent to API: \n{json.dumps(deformedInputs, indent=4)}\n"
-            f"Response from API: \n{json.dumps(response_json, indent=4)}\n"
+            f"Data Sent to Server: \n{json.dumps(deformedInputs, indent=10)}\n"
+            f"Formatted Response: \n{formatted_response}\n"
             "////////////////////////////////////////////////////////////////////////////\n"
         )
         print(output)
@@ -66,7 +75,7 @@ async def send_deformed_input_set(session, set_number, file):
         output = (
             "////////////////////////////////////////////////////////////////////////////\n"
             f"\nSet {set_number}\n"
-            f"Data Sent to API: \n{json.dumps(deformedInputs, indent=4)}\n"
+            f"Data Sent to Server: \n{json.dumps(deformedInputs, indent=10)}\n"
             f"Warning: Non-JSON response received. Content: {response_text}\n"
             "////////////////////////////////////////////////////////////////////////////\n"
         )

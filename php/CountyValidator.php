@@ -16,8 +16,8 @@ class CountyValidator {
     }
 
     public function setCounty($county) {
-        // Here you can also add some basic validation for the input
-        $this->county = strtolower($county); // Assuming case-insensitive comparison
+     
+        $this->county = strtolower($county); 
     }
 
     public function validateCounty() {

@@ -12,6 +12,12 @@ function fillData(isValid) {
             "passwordData": "Passw0rd!",
             "postcodeData": "B4 7ET",
             "biographyData": "Hello, my name is john. I am 22 years old. I like to play football.",
+            "postcodeData": "B10 3AG",
+            "postcodeData": "B10 3AG",
+            "streetNameData": "Leominster Road",
+            "houseNumberData": "70",
+            "areaData": "Small heath ",
+            "cityData": "Birmingham",
         },
         "invalid": {
             "dobData": "3100-01-01",
@@ -25,6 +31,11 @@ function fillData(isValid) {
             "passwordData": "password",
             "postcodeData": "B10 F5G",
             "biographyData": "Invalid-biography",
+            "postcodeData": "B10 3AG",
+            "streetNameData": "?",
+            "houseNumberData": "?",
+            "areaData": "5mallheath ",
+            "cityData": "3ru5",
         },
         "reset": {
             "dobData": "",
@@ -38,6 +49,10 @@ function fillData(isValid) {
             "passwordData": "",
             "postcodeData": "",
             "biographyData": "",
+            "streetNameData": "",
+            "houseNumberData": "",
+            "areaData": "",
+            "cityData": "",
         }
     }
 
@@ -55,6 +70,10 @@ function fillData(isValid) {
     
     document.getElementById("county").value = data[isValid]["countyData"]
     document.getElementById("biography").value = data[isValid]["biographyData"]
+    document.getElementById("streetName").value = data[isValid]["streetNameData"]
+    document.getElementById("houseNumber").value = data[isValid]["houseNumberData"]
+    document.getElementById("area").value = data[isValid]["areaData"]
+    document.getElementById("city").value = data[isValid]["cityData"]
 }
 
 $(document).ready(function () {

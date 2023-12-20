@@ -5,7 +5,7 @@ $(document).ready(function () {
         //console.log("Clicked")
         allValid = validateAll();
 
-        if (allValid != 12){
+        if (allValid != 16){
             alert("Make sure all inputs are valid - Not sending backend");
             return;
         }
@@ -27,6 +27,10 @@ $(document).ready(function () {
         var countyData = document.getElementById("county").value;
 
         var biographyData = document.getElementById("biography").value;
+        var streetNameData = document.getElementById("streetName").value;
+        var houseNumberData = document.getElementById("houseNumber").value;
+        var areaData = document.getElementById("area").value;
+        var cityData = document.getElementById("city").value;
 
         var formData = new FormData();
         formData.append('fileData', fileData);
@@ -41,6 +45,10 @@ $(document).ready(function () {
         formData.append('phoneData', phoneData);
         formData.append('countyData', countyData);
         formData.append('biographyData', biographyData);
+        formData.append('streetNameData', streetNameData);
+        formData.append('houseNumberData', houseNumberData);
+        formData.append('areaData', areaData);
+        formData.append('cityData', cityData);
 
 
         //console.log(fileData)
@@ -120,6 +128,27 @@ $(document).ready(function () {
                     console.log(err);
                 }
 
+                const streetNameLabel = document.getElementById("streetNameLabelBackend");
+                streetNameLabel.classList.remove("hidden");
+                streetNameLabel.style.color = isValid(validatedData.streetName[0]);
+                streetNameLabel.innerHTML = validatedData.streetName[1];
+
+                const houseNumberlabel = document.getElementById("houseNumberLabelBackend");
+                houseNumberlabel.classList.remove("hidden");
+                houseNumberlabel.style.color = isValid(validatedData.houseNumber[0]);
+                houseNumberlabel.innerHTML = validatedData.houseNumber[1];
+
+                const arealabel = document.getElementById("areaLabelBackend");
+                arealabel.classList.remove("hidden");
+                arealabel.style.color = isValid(validatedData.area[0]);
+                arealabel.innerHTML = validatedData.area[1];
+
+                const citylabel = document.getElementById("cityLabelBackend");
+                citylabel.classList.remove("hidden");
+                citylabel.style.color = isValid(validatedData.city[0]);
+                citylabel.innerHTML = validatedData.city[1];
+
+
                 $('#submit').prop('disabled', true);
                 setTimeout(() => {
                     $('#submit').prop('disabled', false);
@@ -197,5 +226,24 @@ function hideAll(){
     const biographyLabelBackend = document.getElementById("biographyLabelBackend");
     biographyLabel.classList.add("hidden");
     biographyLabelBackend.classList.add("hidden");
+    const streetNameLabel = document.getElementById("streetNameLabel");
+    const streetNameLabelBackend = document.getElementById("streetNameLabelBackend");
+    streetNameLabel.classList.add("hidden");
+    streetNameLabelBackend.classList.add("hidden");
+
+    const houseNumberLabel = document.getElementById("houseNumberLabel");
+    const houseNumberLabelBackend = document.getElementById("houseNumberLabelBackend");
+    houseNumberLabel.classList.add("hidden");
+    houseNumberLabelBackend.classList.add("hidden");
+
+    const areaLabel = document.getElementById("areaLabel");
+    const areaLabelBackend = document.getElementById("areaLabelBackend");
+    areaLabel.classList.add("hidden");
+    areaLabelBackend.classList.add("hidden");
+
+    const cityLabel = document.getElementById("cityLabel");
+    const cityLabelBackend = document.getElementById("cityLabelBackend");
+    cityLabel.classList.add("hidden");
+    cityLabelBackend.classList.add("hidden");
 
 }

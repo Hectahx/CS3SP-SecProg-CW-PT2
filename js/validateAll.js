@@ -11,7 +11,7 @@ function validateAll() {
     var debitCardInput = validateDebitCard();
 
     var nameInput = validateName();
-    var lastNameInput = validateLastName();
+    var lastNameInput = validateName();
     var emailInput = validateEmail();
     var dobInput = validateDOB();
     var phoneInput = validatePhone();

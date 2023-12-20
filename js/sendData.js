@@ -246,4 +246,8 @@ function hideAll(){
     cityLabel.classList.add("hidden");
     cityLabelBackend.classList.add("hidden");
 
+    const lastNameLabel = document.getElementById("lastNameLabel");
+    const lastNameLabelBackend = document.getElementById("lastNameLabelBackend");
+    lastNameLabel.classList.add("hidden");
+    lastNameLabelBackend.classList.add("hidden");
 }

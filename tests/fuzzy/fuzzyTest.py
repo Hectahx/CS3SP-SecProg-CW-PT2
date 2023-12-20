@@ -46,7 +46,7 @@ def generate_deformed_input(input_value):
 # Asynchronous function to post deformed inputs to a server
 async def post_deformed_inputs_async(session, deformedInputs):
     # URL of the server where data is to be posted
-    url = 'http://192.168.124.132/php/processValidation.php'
+    url = 'http://127.0.0.1/php/processValidation.php'
     # Preparing form data for the HTTP POST request
     data = aiohttp.FormData()
 
@@ -75,31 +75,30 @@ async def send_deformed_input_set(session, set_number, file):
 
     # Sending the deformed inputs to the server and getting the response
     response_text = await post_deformed_inputs_async(session, deformedInputs)
-    try:
-        # Parsing the JSON response from the server
-        response_json = json.loads(response_text)
-        formatted_response = json.dumps(response_json, indent=4)  
-        # Formatting the response for better readability
-        formatted_response = "    " + formatted_response.replace("\n", "\n    ")  
+    
+    # Formatting the response for better readability
+    formattedResponse2 = response_text.replace("],", "],\n")  # Add a newline after each ],
 
+    
+    try:
         # Preparing and logging the output
         output = (
-            "////////////////////////////////////////////////////////////////////////////\n"
+            "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n"
             f"\nSet {set_number}: \n"
-            f"Data Sent to Server: \n{json.dumps(deformedInputs, indent=10)}\n"
-            f"Formatted Response: \n{formatted_response}\n"
-            "////////////////////////////////////////////////////////////////////////////\n"
+            f"Data Sent to Server: \n{json.dumps(deformedInputs, indent=2)}\n"
+            f"Formatted Response 2: \n{formattedResponse2}\n"
+            "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n"
         )
         print(output)
         file.write(output)
     except json.JSONDecodeError:
         # Handling non-JSON responses
         output = (
-            "////////////////////////////////////////////////////////////////////////////\n"
+            "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n"
             f"\nSet {set_number}\n"
-            f"Data Sent to Server: \n{json.dumps(deformedInputs, indent=10)}\n"
+            f"Data Sent to Server: \n{json.dumps(deformedInputs, indent=2)}\n"
             f"Warning: Non-JSON response received. Content: {response_text}\n"
-            "////////////////////////////////////////////////////////////////////////////\n"
+            "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n"
         )
         print(output)
         file.write(output)

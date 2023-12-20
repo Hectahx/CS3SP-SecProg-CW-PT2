@@ -158,7 +158,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     try {
-        echo json_encode($validatedData);
+        echo json_encode($validatedData) ;
     } catch (\Exception $e) {
         echo "Error encoding JSON: " . $e->getMessage();
     }

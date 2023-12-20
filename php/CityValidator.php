@@ -26,7 +26,7 @@ class CityValidator {
         if (!preg_match('/^[A-Z][a-zA-Z]+$/', $this->city)) {
             return [false, "City must start with a capital letter and contain only letters - Back End"];
         }
-        if (preg_match('/([a-zA-Z])\\1{2,}/', $this->area)) {
+        if (preg_match('/([a-zA-Z])\\1{2,}/', $this->city)) {
             return [false, "Area name has too many repetitive characters - Back End"];
         }
         return [true, "Valid City - Back End"];

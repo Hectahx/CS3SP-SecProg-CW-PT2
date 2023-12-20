@@ -11,10 +11,12 @@ function validateAll() {
     var debitCardInput = validateDebitCard();
 
     var nameInput = validateName();
+    var lastNameInput = validateLastName();
     var emailInput = validateEmail();
     var dobInput = validateDOB();
     var phoneInput = validatePhone();
     var countyInput = validateCounty();
+    var biographyInput = validateBiography();
 
     const fileLabel = document.getElementById("fileLabel");
     fileLabel.classList.remove("hidden");
@@ -57,6 +59,12 @@ function validateAll() {
     nameLabel.innerHTML = nameInput[1];
     allValid+=Number(nameInput[0])
 
+    const lastNameLabel = document.getElementById("lastNameLabel");
+    lastNameLabel.classList.remove("hidden");
+    lastNameLabel.style.color = isValid(lastNameInput[0]);
+    lastNameLabel.innerHTML = lastNameInput[1];
+    allValid+=Number(lastNameInput[0])
+
     const emailLabel = document.getElementById("emailLabel");
     emailLabel.classList.remove("hidden");
     emailLabel.style.color = isValid(emailInput[0]);
@@ -80,6 +88,12 @@ function validateAll() {
     countyLabel.style.color = isValid(countyInput[0]);
     countyLabel.innerHTML = countyInput[1];
     allValid+=Number(countyInput[0])
+
+    const biographyLabel = document.getElementById("biographyLabel");
+    biographyLabel.classList.remove("hidden");
+    biographyLabel.style.color = isValid(biographyInput[0]);
+    biographyLabel.innerHTML = biographyInput[1];
+    allValid+=Number(biographyInput[0])
 
     return allValid
 

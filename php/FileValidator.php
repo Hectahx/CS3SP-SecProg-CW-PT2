@@ -35,7 +35,7 @@ class FileValidator
         // Start output buffering
         ob_start();
         // Output the image to the buffer
-        imagejpeg($img);
+        imagepng($img);
         // Capture the buffer into a variable
         $imageData = ob_get_contents();
         // End and clean the buffer

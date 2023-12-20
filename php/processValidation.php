@@ -1,11 +1,11 @@
 <?php
 namespace forms;
 
-/*
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-*/
+
 
 
 try {
@@ -31,10 +31,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cardData = $_POST["cardData"];
 
     $nameData = $_POST["nameData"];
+    $lastNameData = $_POST["lastNameData"];
     $emailData = $_POST["emailData"];
     $dobData = $_POST["dobData"];
     $phoneData = $_POST["phoneData"];
+
     $countyData = $_POST["countyData"];
+    $biographyData = $_POST["biographyData"];
 
     //Assigning all the variables into their respective validator classes
     try {
@@ -45,10 +48,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $cardValidator = new DebitCardValidator($cardData);
 
         $nameValidator = new NameValidator($nameData);
+        $lastNameValidator = new NameValidator($lastNameData);
         $emailValidator = new EmailValidator($emailData);
         $ageValidator = new AgeValidator($dobData);
         $phoneValidator = new PhoneValidator($phoneData);
+
         $countyValidator = new CountyValidator($countyData);
+        $biographyValidator = new BiographyValidator($biographyData);
     } catch (\Exception $e) {
         echo $e;
     }
@@ -63,10 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $validatedData["card"] = $cardValidator->validateDebitCard();
 
         $validatedData["name"] = $nameValidator->validateName();
+        $validatedData["lastname"] = $lastNameValidator->validateName();
         $validatedData["email"] = $emailValidator->validateEmail();
         $validatedData["dob"] = $ageValidator->validateDOB();
         $validatedData["phone"] = $phoneValidator->validatePhone();
+
         $validatedData["county"] = $countyValidator->validateCounty();
+        $validatedData["biography"] = $biographyValidator->validateBiography();
 
         $count = 0;
 
@@ -79,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Error during validation: " . $e->getMessage();
     }
 
-    if ($count == 10) {
+    if ($count == 12) {
         $validatedData["allValid"] = true;
 
         $fileData = $fileValidator->getCleanedFile();//Retrieving a cleaned version of the file
@@ -88,25 +97,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $cardData = htmlspecialchars($cardData);
 
         $nameData = htmlspecialchars($nameData);
+        $lastNameData = htmlspecialchars($lastNameData);
         $emailData = htmlspecialchars($emailData);
         $dobData = htmlspecialchars($dobData);
         $phoneData = htmlspecialchars($phoneData);
+
         $countyData = htmlspecialchars($countyData);
+        $biographyData = htmlspecialchars($biographyData);
 
         try {
 
-            $query = $con->prepare("INSERT INTO form_data (name, email, password, postcode, county, number, card, json, file, dob) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $query = $con->prepare("INSERT INTO form_data (name, lastname, email, password, biography, postcode, county, number, card, json, file, dob) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             // Bind the parameters
             $query->bind_param(
-                "ssssssssbs", // Data types of the parameters: s = string, b = blob
-                $nameData, $emailData, $passwordData, $postcodeData, $countyData,
+                "ssssssssssbs", // Data types of the parameters: s = string, b = blob
+                $nameData, $lastNameData, $emailData, $passwordData, $biographyData, $postcodeData, $countyData,
                 $phoneData, $cardData, $jsonData, $fileData, $dobData
             );
 
             // Assuming $fileData is a blob, you might need to send it in packets
             if (!empty($fileData)) {
-                $query->send_long_data(8, $fileData);
+                $query->send_long_data(10, $fileData); // Number is position in database starting from 0
             }
 
             // Execute the query

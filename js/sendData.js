@@ -5,7 +5,7 @@ $(document).ready(function () {
         //console.log("Clicked")
         allValid = validateAll();
 
-        if (allValid != 10){
+        if (allValid != 12){
             alert("Make sure all inputs are valid - Not sending backend");
             return;
         }
@@ -18,12 +18,15 @@ $(document).ready(function () {
         var jsonData = document.getElementById('jsonInput').value;
         var postcodeData = document.getElementById("postCode").value;
         var cardData = document.getElementById("debitCard").value;
+        var dobData = document.getElementById("dob").value;
 
         var nameData = document.getElementById("name").value;
+        var lastNameData = document.getElementById("lastName").value;
         var emailData = document.getElementById("email").value;
-        var dobData = document.getElementById("dob").value;
         var phoneData = document.getElementById("phone").value;
         var countyData = document.getElementById("county").value;
+
+        var biographyData = document.getElementById("biography").value;
 
         var formData = new FormData();
         formData.append('fileData', fileData);
@@ -32,16 +35,18 @@ $(document).ready(function () {
         formData.append('postcodeData', postcodeData);
         formData.append('cardData', cardData);
         formData.append('nameData', nameData);
+        formData.append('lastNameData', lastNameData);
         formData.append('emailData', emailData);
         formData.append('dobData', dobData);
         formData.append('phoneData', phoneData);
         formData.append('countyData', countyData);
+        formData.append('biographyData', biographyData);
 
 
         //console.log(fileData)
 
         // This uses ajax to make a post request which sends the comment to the database
-
+        
         $.ajax({
             url: 'php/processValidation.php',
             type: 'POST',
@@ -51,58 +56,69 @@ $(document).ready(function () {
             // if the post request is successful it refreshes the comments
             success: function (response) {
                 console.log(response)
-                var validatedData = JSON.parse(response);
-                console.log(validatedData);
-
-                const fileLabel = document.getElementById("fileLabelBackend");
-                fileLabel.classList.remove("hidden");
-                fileLabel.style.color = isValid(validatedData.file[0]);
-                fileLabel.innerHTML = validatedData.file[1];
-
-                const jsonLabel = document.getElementById("jsonLabelBackend");
-                jsonLabel.classList.remove("hidden");
-                jsonLabel.style.color = isValid(validatedData.json[0]);
-                jsonLabel.innerHTML = validatedData.json[1];
-
-                const postCodeLabel = document.getElementById("postCodeLabelBackend");
-                postCodeLabel.classList.remove("hidden");
-                postCodeLabel.style.color = isValid(validatedData.postcode[0]);
-                postCodeLabel.innerHTML = validatedData.postcode[1];
-
-                const passwordLabel = document.getElementById("passwordLabelBackend");
-                passwordLabel.classList.remove("hidden");
-                passwordLabel.style.color = isValid(validatedData.password[0]);
-                passwordLabel.innerHTML = validatedData.password[1];
-
-                const debitCardLabel = document.getElementById("debitCardLabelBackend");
-                debitCardLabel.classList.remove("hidden");
-                debitCardLabel.style.color = isValid(validatedData.card[0]);
-                debitCardLabel.innerHTML = validatedData.card[1];
-
-                const nameLabel = document.getElementById("nameLabelBackend");
-                nameLabel.classList.remove("hidden");
-                nameLabel.style.color = isValid(validatedData.name[0]);
-                nameLabel.innerHTML = validatedData.name[1];
-
-                const emailLabel = document.getElementById("emailLabelBackend");
-                emailLabel.classList.remove("hidden");
-                emailLabel.style.color = isValid(validatedData.email[0]);
-                emailLabel.innerHTML = validatedData.email[1];
-
-                const dobLabel = document.getElementById("dobLabelBackend");
-                dobLabel.classList.remove("hidden");
-                dobLabel.style.color = isValid(validatedData.dob[0]);
-                dobLabel.innerHTML = validatedData.dob[1];
-
-                const phoneLabel = document.getElementById("phoneLabelBackend");
-                phoneLabel.classList.remove("hidden");
-                phoneLabel.style.color = isValid(validatedData.phone[0]);
-                phoneLabel.innerHTML = validatedData.phone[1];
-
-                const countyLabel = document.getElementById("countyLabelBackend");
-                countyLabel.classList.remove("hidden");
-                countyLabel.style.color = isValid(validatedData.county[0]);
-                countyLabel.innerHTML = validatedData.county[1];
+                try{
+                    var validatedData = JSON.parse(response);
+                    console.log(validatedData);
+    
+                    const fileLabel = document.getElementById("fileLabelBackend");
+                    fileLabel.classList.remove("hidden");
+                    fileLabel.style.color = isValid(validatedData.file[0]);
+                    fileLabel.innerHTML = validatedData.file[1];
+    
+                    const jsonLabel = document.getElementById("jsonLabelBackend");
+                    jsonLabel.classList.remove("hidden");
+                    jsonLabel.style.color = isValid(validatedData.json[0]);
+                    jsonLabel.innerHTML = validatedData.json[1];
+    
+                    const postCodeLabel = document.getElementById("postCodeLabelBackend");
+                    postCodeLabel.classList.remove("hidden");
+                    postCodeLabel.style.color = isValid(validatedData.postcode[0]);
+                    postCodeLabel.innerHTML = validatedData.postcode[1];
+    
+                    const passwordLabel = document.getElementById("passwordLabelBackend");
+                    passwordLabel.classList.remove("hidden");
+                    passwordLabel.style.color = isValid(validatedData.password[0]);
+                    passwordLabel.innerHTML = validatedData.password[1];
+    
+                    const debitCardLabel = document.getElementById("debitCardLabelBackend");
+                    debitCardLabel.classList.remove("hidden");
+                    debitCardLabel.style.color = isValid(validatedData.card[0]);
+                    debitCardLabel.innerHTML = validatedData.card[1];
+    
+                    const nameLabel = document.getElementById("nameLabelBackend");
+                    nameLabel.classList.remove("hidden");
+                    nameLabel.style.color = isValid(validatedData.name[0]);
+                    nameLabel.innerHTML = validatedData.name[1];
+    
+                    const lastNameLabel = document.getElementById("lastNameLabelBackend");
+                    lastNameLabel.classList.remove("hidden");
+                    lastNameLabel.style.color = isValid(validatedData.lastname[0]);
+                    lastNameLabel.innerHTML = validatedData.lastname[1];
+    
+                    const emailLabel = document.getElementById("emailLabelBackend");
+                    emailLabel.classList.remove("hidden");
+                    emailLabel.style.color = isValid(validatedData.email[0]);
+                    emailLabel.innerHTML = validatedData.email[1];
+    
+                    const dobLabel = document.getElementById("dobLabelBackend");
+                    dobLabel.classList.remove("hidden");
+                    dobLabel.style.color = isValid(validatedData.dob[0]);
+                    dobLabel.innerHTML = validatedData.dob[1];
+    
+                    const phoneLabel = document.getElementById("phoneLabelBackend");
+                    phoneLabel.classList.remove("hidden");
+                    phoneLabel.style.color = isValid(validatedData.phone[0]);
+                    phoneLabel.innerHTML = validatedData.phone[1];
+    
+                    const countyLabel = document.getElementById("countyLabelBackend");
+                    countyLabel.classList.remove("hidden");
+                    countyLabel.style.color = isValid(validatedData.county[0]);
+                    countyLabel.innerHTML = validatedData.county[1];
+                }
+                catch(err){
+                    alert("There has been a server-side error. See console for more information");
+                    console.log(err);
+                }
 
                 $('#submit').prop('disabled', true);
                 setTimeout(() => {
@@ -117,6 +133,7 @@ $(document).ready(function () {
                 console.log(err);
             }
         });
+        
 
 
     });
@@ -175,5 +192,10 @@ function hideAll(){
     const countyLabelBackend = document.getElementById("countyLabelBackend");
     countyLabel.classList.add("hidden");
     countyLabelBackend.classList.add("hidden");
+
+    const biographyLabel = document.getElementById("biographyLabel");
+    const biographyLabelBackend = document.getElementById("biographyLabelBackend");
+    biographyLabel.classList.add("hidden");
+    biographyLabelBackend.classList.add("hidden");
 
 }

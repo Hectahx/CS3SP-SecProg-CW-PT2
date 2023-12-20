@@ -28,8 +28,8 @@ class NameValidator {
         }
 
         // Regex Pattern Matching (Only letters and spaces allowed)
-        if (!preg_match("/^[A-Za-z\s]+$/", $this->name)) {
-            return [false, "Name can only contain letters and spaces."];
+        if (!preg_match("/^[A-Za-z]+$/", $this->name)) {
+            return [false, "Name can only contain letters."];
         }
 
         return [true, "Valid Name - Back End"];

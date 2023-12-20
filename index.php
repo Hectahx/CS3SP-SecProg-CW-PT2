@@ -17,14 +17,24 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <button id="invalidButton">Autofill Inputs - Invalid</button>
     <button id="resetButton">Reset Inputs</button>
     <br><br><br>
-    <!-- Name Input -->
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" autocomplete="name" placeholder="John Doe">
-    <label for="name" class="example-format">Example: John Doe</label>
+    <!-- First Name Input -->
+    <label for="name">First Name:</label>
+    <input type="text" id="name" autocomplete="given-name" placeholder="John">
+    <label for="name" class="example-format">Example: John - between 2-50 characters</label>
     <br>
     <label for="name" id="nameLabel" class="hidden"></label>
     <br>
     <label for="name" id="nameLabelBackend" class="hidden"></label>
+    <br><br>
+
+    <!-- Last Name Input -->
+    <label for="name">Last Name:</label>
+    <input type="text" id="lastName" autocomplete="family-name" placeholder="Doe">
+    <label for="lastName" class="example-format">Example: Doe - between 2-50 characters</label>
+    <br>
+    <label for="lastName" id="lastNameLabel" class="hidden"></label>
+    <br>
+    <label for="lastName" id="lastNameLabelBackend" class="hidden"></label>
     <br><br>
 
     <!-- Email Input -->
@@ -75,7 +85,8 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <!-- Password Input -->
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
-    <label for="password" class="example-format">Password must be at least 8 characters long, contain at least one uppercase letter,
+    <label for="password" class="example-format">Password must be at least 8 characters long, contain at least one
+        uppercase letter,
         one lowercase letter, one number, and one symbol</label>
     <br>
     <label for="password" id="passwordLabel" class="hidden"></label>
@@ -86,6 +97,9 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <!-- Confirm Password Input -->
     <label for="confirmPassword">Confirm Password:</label>
     <input type="password" id="confirmPassword" required>
+    <label for="password" class="example-format">Password must be at least 8 characters long, contain at least one
+        uppercase letter,
+        one lowercase letter, one number, and one symbol</label>
     <br>
     <label for="confirmPassword" id="confirmPasswordLabel" class="hidden"></label>
     <br><br>
@@ -94,7 +108,8 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <!-- Debit Card Input -->
     <label for="debitCard">Debit Card:</label>
     <input type="text" id="debitCard" name="debitCard" required placeholder="378282246310005">
-    <label for="password" class="example-format">Example: 378282246310005 - please try a valid debit card as this uses an algorithm to
+    <label for="password" class="example-format">Example: 378282246310005 - please try a valid debit card as this uses
+        an algorithm to
         prove whether a debit card is valid</label>
     <br>
     <label for="debitCard" id="debitCardLabel" class="hidden"></label>
@@ -124,11 +139,21 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
     <!-- Post Code Input -->
     <label for="postCode">Post Code:</label>
     <input type="text" id="postCode" name="postCode" placeholder="B4 7ET" required>
-    <label for="dob" class="example-format">Example: B4 7ET</label>
+    <label for="postCode" class="example-format">Example: B4 7ET</label>
     <br>
     <label for="postCode" id="postCodeLabel" class="hidden"></label>
     <br>
     <label for="postCode" id="postCodeLabelBackend" class="hidden"></label>
+    <br><br>
+
+    <!-- Biography Input -->
+    <label for="biography">Biography:</label>
+    <textarea id="biography" name="biography" placeholder="Talk about yourself" required></textarea>
+    <label for="biography" class="example-format">Biography must be 3 sentences minimum, each sentence needs at least 10 characters and end with !/./?</label>
+    <br>
+    <label for="biography" id="biographyLabel" class="hidden"></label>
+    <br>
+    <label for="biography" id="biographyLabelBackend" class="hidden"></label>
     <br><br>
 
 
@@ -149,6 +174,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://a
 <script src="js/validateDOB.js"></script>
 <script src="js/validateEmail.js"></script>
 <script src="js/validatePhone.js"></script>
+<script src="js/validateBiography.js"></script>
 <script src="js/validateAll.js"></script>
 <script src="js/sendData.js"></script>
 

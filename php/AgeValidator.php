@@ -42,7 +42,7 @@ class AgeValidator {
             if ($age < 18) {
                 return [false, "You must be 18 years old or older - Back End"];
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             // Handle exception for invalid DateTime format
             return [false, "Invalid Date Format - Back End"];
         }

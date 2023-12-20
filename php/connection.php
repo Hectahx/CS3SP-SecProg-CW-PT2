@@ -1,11 +1,13 @@
 <?php
 $dbhost = "localhost";
-$dbuser = "root";
+$dbuser = "roodt";
 $dbpass = "root";
 $dbname = "forms";
+try {
+	$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 
-if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
-{
-	echo "failed to connect to MySQL: ". mysqli_connect_error();
+} catch (\Throwable $th) {
+	echo "Error connecting to database, please contact server owner";
+	exit();
 }
 ?>

@@ -5,22 +5,26 @@ function fillData(isValid) {
             "countyData": "england",
             "cardData": "4111111111111111",
             "emailData": "test@example.com",
-            "nameData": "John Doe",
+            "nameData": "John",
+            "lastNameData": "Doe",
             "phoneData": "+447305939569",
             "jsonData": '{"key": "value"}',
             "passwordData": "Passw0rd!",
-            "postcodeData": "B10 3AG",
+            "postcodeData": "B4 7ET",
+            "biographyData": "Hello, my name is john. I am 22 years old. I like to play football.",
         },
         "invalid": {
             "dobData": "3100-01-01",
             "countyData": "invalid",
             "cardData": "4111111111111112",
             "emailData": "invalidemail",
-            "nameData": "Jo",
+            "nameData": "J234",
+            "lastNameData": "D012sw",
             "phoneData": "++1233234511",
             "jsonData": '{"key": "value}',
             "passwordData": "password",
             "postcodeData": "B10 F5G",
+            "biographyData": "Invalid-biography",
         },
         "reset": {
             "dobData": "",
@@ -28,10 +32,12 @@ function fillData(isValid) {
             "cardData": "",
             "emailData": "",
             "nameData": "",
+            "lastNameData": "",
             "phoneData": "",
             "jsonData": "",
             "passwordData": "",
             "postcodeData": "",
+            "biographyData": "",
         }
     }
 
@@ -42,10 +48,13 @@ function fillData(isValid) {
     document.getElementById("confirmPassword").value = data[isValid]["passwordData"]
 
     document.getElementById("name").value = data[isValid]["nameData"]
+    document.getElementById("lastName").value = data[isValid]["lastNameData"]
     document.getElementById("email").value = data[isValid]["emailData"]
     document.getElementById("dob").value = data[isValid]["dobData"]
     document.getElementById("phone").value = data[isValid]["phoneData"]
+    
     document.getElementById("county").value = data[isValid]["countyData"]
+    document.getElementById("biography").value = data[isValid]["biographyData"]
 }
 
 $(document).ready(function () {

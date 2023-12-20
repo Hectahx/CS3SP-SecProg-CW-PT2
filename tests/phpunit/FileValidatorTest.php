@@ -27,7 +27,7 @@ class FileValidatorTest extends TestCase {
             'tmp_name' => $this->testFilesPath . 'bingus.jpg'
         ];
         $validator = new FileValidator($file);
-        $this->assertEquals([false, 'Invalid file. We can only accept PNG images - Back End'], $validator->validateFile());
+        $this->assertEquals([false, 'Invalid file extension or MIME type. Only PNG images are accepted - Back End'], $validator->validateFile());
     }
 
     public function testEmptyJPEGFile() {

@@ -24,12 +24,12 @@ class NameValidator {
     public function validateName() {
         // Basic Length Check
         if (strlen($this->name) < 2 || strlen($this->name) > 50) {
-            return [false, "Name must be between 2 and 50 characters."];
+            return [false, "Name must be between 2 and 50 characters - Back End"];
         }
 
         // Regex Pattern Matching (Only letters and spaces allowed)
         if (!preg_match("/^[A-Za-z]+$/", $this->name)) {
-            return [false, "Name can only contain letters."];
+            return [false, "Name can only contain letters - Back End"];
         }
 
         return [true, "Valid Name - Back End"];

@@ -80,7 +80,7 @@ class FileValidator
             if ($this->file['size'] > 2000000) { // 2MB in bytes
                 throw new \Exception('File size is too large. Maximum size allowed is 2MB - Back End');
             }
-            return [true, 'The file has been uploaded successfully - Back End'];
+            return [true, 'The file is a valid PNG image - Back End'];
         } catch (\Exception $e) {
             return [false, $e->getMessage()];
         }

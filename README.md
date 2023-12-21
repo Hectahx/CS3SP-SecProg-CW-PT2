@@ -15,6 +15,9 @@ Before you begin, ensure you have met the following requirements:
 - Apache Web Server
 - MySQL Database/MariaDB
 - PHP
+- Python
+- PHP Unit - (https://phpunit.de/manual/6.5/en/installation.html)
+- Radamsa - (https://gitlab.com/akihe/radamsa)
 
 ## Installation
 
@@ -27,6 +30,7 @@ Follow the guide provided by [DigitalOcean](https://www.digitalocean.com/communi
 1. Copy your project into the directory you configured in Apache
 
 2. Configure your application to connect to the MySQL database.
+    - import "Database/form_data.sql" into phpmyadmin on your ubuntu machine (127.0.0.1/phpmyadmin)
     - Connection to the database is done in [php/connection.php](php/connection.php)
 
 ## Tests

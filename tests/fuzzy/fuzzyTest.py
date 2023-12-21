@@ -78,7 +78,6 @@ async def send_deformed_input_set(session, set_number, file):
     
     # Formatting the response for better readability
     formattedResponse2 = response_text.replace("],", "],\n")  # Add a newline after each ],
-
     
     try:
         # Preparing and logging the output

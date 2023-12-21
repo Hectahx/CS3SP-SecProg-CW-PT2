@@ -21,7 +21,6 @@ try {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $validatedData; // This is where the data being sent back to the client is stored
 
     //Assigning all the post variables into actual variables
     $fileData = $_FILES["fileData"];
@@ -59,10 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $ageValidator = new AgeValidator($dobData);
         $phoneValidator = new PhoneValidator($phoneData);
 
-        $countyValidator = new CountyValidator($countyData);
         $biographyValidator = new BiographyValidator($biographyData);
-
+        
         $streetNameValidator = new StreetNameValidator($streetNameData);
+        $countyValidator = new CountyValidator($countyData);
         $houseNumberValidator = new HouseNumberValidator($houseNumberData);
         $areaValidator = new AreaValidator($areaData);
         $cityValidator = new CityValidator($cityData);
@@ -111,23 +110,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $validatedData["allValid"] = true;
 
         $fileData = $fileValidator->getCleanedFile();//Retrieving a cleaned version of the file
-        $jsonData = htmlspecialchars($jsonData);
-        $postcodeData = htmlspecialchars($postcodeData);
-        $cardData = htmlspecialchars($cardData);
-
-        $nameData = htmlspecialchars($nameData);
-        $lastNameData = htmlspecialchars($lastNameData);
-        $emailData = htmlspecialchars($emailData);
-        $dobData = htmlspecialchars($dobData);
-        $phoneData = htmlspecialchars($phoneData);
-
-        $countyData = htmlspecialchars($countyData);
-        $biographyData = htmlspecialchars($biographyData);
-
-        $streetNameData = htmlspecialchars($streetNameData);
-        $houseNumberData = htmlspecialchars($houseNumberData);
-        $areaData = htmlspecialchars($areaData);
-        $cityData = htmlspecialchars($cityData);
+        $jsonData = htmlspecialchars($jsonValidator->getJSON());
+        $cardData = htmlspecialchars($cardValidator->getCardNumber()); 
+        $nameData = htmlspecialchars($nameValidator->getName()); 
+        $lastNameData = htmlspecialchars($lastNameValidator->getName()); 
+        $passwordData = htmlspecialchars($passwordValidator->getPassword());
+        
+        $emailData = htmlspecialchars($emailValidator->getEmail()); 
+        $dobData = htmlspecialchars($ageValidator->getDateOfBirth()); 
+        $phoneData = htmlspecialchars($phoneValidator->getPhone()); 
+        $countyData = htmlspecialchars($countyValidator->getCounty()); 
+        $biographyData = htmlspecialchars($biographyValidator->getBiography());
+        
+        $streetNameData = htmlspecialchars($streetNameValidator->getStreetName()); 
+        $houseNumberData = htmlspecialchars($houseNumberValidator->getHouseNumber()); 
+        $areaData = htmlspecialchars($areaValidator->getArea()); 
+        $postcodeData = htmlspecialchars($postCodeValidator->getPostCode()); 
+        $cityData = htmlspecialchars($cityValidator->getCity()); 
 
 
         try {

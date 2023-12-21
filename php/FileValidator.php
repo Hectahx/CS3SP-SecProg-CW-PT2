@@ -4,7 +4,6 @@ namespace forms;
 class FileValidator
 {
     private $file;
-    private $cleanedFile;
 
     public function __construct($file)
     {

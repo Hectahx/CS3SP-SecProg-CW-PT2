@@ -11,13 +11,14 @@ A secure form has been designed using PHP+MySQL.
 
 Before you begin, ensure you have met the following requirements:
 
-- Linux Operating System
+- Ubuntu 22.04
 - Apache Web Server
 - MySQL Database/MariaDB
 - PHP
 - Python
 - PHP Unit - (https://phpunit.de/manual/6.5/en/installation.html)
 - Radamsa - (https://gitlab.com/akihe/radamsa)
+- psalm - (https://psalm.dev/docs/running_psalm/installation/)
 
 ## Installation
 

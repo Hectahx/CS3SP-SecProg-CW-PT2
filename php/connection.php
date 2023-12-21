@@ -1,7 +1,7 @@
 <?php
 $dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "root";
+$dbuser = "root"; #change me 
+$dbpass = "root"; #change me
 $dbname = "forms";
 try {
 	$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
